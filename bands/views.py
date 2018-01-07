@@ -133,8 +133,27 @@ def ondeletecategoryclick(request):
     sub_cat=SubCategory.objects.all()
     att=Attributes.objects.all()
     return render(request,'deletecategory.html',{'cat':cat,'sub_cat':sub_cat,'att':att})
-	
+
 @csrf_exempt
 def delete_att(request):
+    att_value = request.POST['att_value']
+    subcat_value=request.POST['subcat_value']
+    sub_catobj=SubCategory.objects.filter(subcat_name=subcat_value)
+    sub_catobj_id=sub_catobj[0].subcat_id
+    attobj = Attributes.objects.filter(attribute_name=att_value,subcategory_id=sub_catobj_id)
+    attobj.delete()
+    return HttpResponse(att_value+" Deleted")
 
-    return HttpResponse("Response..!!")
+@csrf_exempt
+def delete_subcat(request):
+    subcat_value = request.POST['subcat_value']
+    sub_catobj=SubCategory.objects.filter(subcat_name=subcat_value)
+    sub_catobj.delete()
+    return HttpResponse(subcat_value+" deleted..!")
+
+@csrf_exempt
+def delete_category(request):
+    cat_value = request.POST['cat_value']
+    catobj=Category.objects.filter(cat_name=cat_value)
+    catobj.delete()
+    return HttpResponse(cat_value+" deleted..!")

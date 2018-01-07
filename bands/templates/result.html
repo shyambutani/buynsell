@@ -19,8 +19,28 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light bg-faded" style="background-color: 17a2b8;">
-  <a class="navbar-brand" style="color: fff" href="/bands/admin/">BuyNSell-Admin</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="margin-bottom:10px;border-bottom: solid 1px #ddd;">
+        <a class="navbar-brand" href="/bands/admin/"><span style="margin-left:100px;">BuyNSell</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText" style="margin-left:100px;">
+          <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="/bands/admin">Admin Home<span class="sr-only">(current)</span></a>
+          </li>
+          </ul>
+          <div>
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#">Admin</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Logout</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
 </nav>
 {% for msg in msg_list %}
     {{msg}}<br>

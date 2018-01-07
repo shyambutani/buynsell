@@ -14,6 +14,8 @@ urlpatterns = [
     url(r'^admin/$',views.admin,name='admin'),
     url(r'^addtosession/$',views.addtosession,name='addtosession'),
     url(r'^deletefromsession/$',views.deletefromsession,name='deletefromsession'),
-	url(r'^deletecategory/$',views.ondeletecategoryclick,name='ondeletecategoryclick'),
-    url(r'^delete_att/$',views.delete_att,name='delete_att')
+    url(r'^deletecategory/$',views.ondeletecategoryclick,name='ondeletecategoryclick'),
+    url(r'^delete_att/$',views.delete_att,name='delete_att'),
+    url(r'^delete_subcat/$',views.delete_subcat,name='delete_subcat'),
+    url(r'^delete_category/$',views.delete_category,name='delete_category')
 ]
